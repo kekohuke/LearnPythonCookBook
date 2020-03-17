@@ -21,4 +21,13 @@ record = [
 ]
 
 def do_foo(x, y):
-    print('foo', )
+    print('foo', x, y)
+
+def do_bar(s):
+    print('bar', s)
+
+for tag, *args in record:
+    if tag == 'foo':
+        do_foo(*args)
+    elif tag == 'bar':
+        do_bar(*args)
